@@ -1,0 +1,1 @@
+Module by Binogure, available at https://github.com/binogure-studio/godot-error-handler

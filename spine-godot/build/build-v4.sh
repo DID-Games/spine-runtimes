@@ -77,6 +77,8 @@ pushd ../godot
 if [ "$os" == "macos" ] && [ $dev == "false" ]; then
 	scons $target $mono_module arch=x86_64 compiledb=yes custom_modules="../spine_godot" opengl3=yes --jobs=$cpus
 	scons $target $mono_module arch=arm64 compiledb=yes custom_modules="../spine_godot" opengl3=yes --jobs=$cpus
+	scons $target $mono_module arch=x86_64 compiledb=yes custom_modules="../godoterrorhandler" opengl3=yes --jobs=$cpus
+	scons $target $mono_module arch=arm64 compiledb=yes custom_modules="../godoterrorhandler" opengl3=yes --jobs=$cpus
 	if [ $mono == "true" ]; then
 		echo "Building C# glue and assemblies."
 		"./bin/$godot_exe_host" --generate-mono-glue modules/mono/glue
@@ -96,6 +98,7 @@ if [ "$os" == "macos" ] && [ $dev == "false" ]; then
 	popd
 else
 	scons $target $mono_module compiledb=yes custom_modules="../spine_godot" opengl3=yes --jobs=$cpus
+	scons $target $mono_module compiledb=yes custom_modules="../godoterrorhandler" opengl3=yes --jobs=$cpus
 	if [ $mono == "true" ]; then
 		echo "Building C# glue and assemblies."
 		"./bin/$godot_exe_host" --headless --generate-mono-glue modules/mono/glue
