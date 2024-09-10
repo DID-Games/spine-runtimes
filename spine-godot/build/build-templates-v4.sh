@@ -24,7 +24,7 @@ if [ ! -d ../godot ]; then
 fi
 
 platform=${1%/}
-mono=false
+mono=true
 
 if [[ $# -eq 2 ]]; then
 	mono=${2%/}

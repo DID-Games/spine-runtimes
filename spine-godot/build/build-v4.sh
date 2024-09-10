@@ -11,7 +11,7 @@ fi
 
 target=""
 dev="false"
-mono="false"
+mono="true"
 
 if [ $# -gt 0 ]; then
 	if [ $# -gt 1 ]; then
