@@ -71,6 +71,15 @@ if [ $dev = "true" ]; then
 	fi
 fi
 cp -r ../spine-cpp/spine-cpp spine_godot
+
+# Apply patch for 4.3-stable, see https://github.com/godotengine/godot/issues/95861/#issuecomment-2486021565
+if [ "$branch" = "4.3-stable" ]; then
+    pushd godot
+    cp ../build/4.3-stable/tvgLock.h thirdparty/thorvg/src/common/tvgLock.h
+	cp ../build/4.3-stable/tvgTaskScheduler.h thirdparty/thorvg/src/renderer/tvgTaskScheduler.h
+    popd
+fi
+
 popd
 
 popd > /dev/null
