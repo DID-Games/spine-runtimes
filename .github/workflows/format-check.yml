@@ -59,7 +59,7 @@ jobs:
         git diff > format-diff.txt          
 
     - name: Archive formatting result
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: format-diff
         path: format-diff.txt
