@@ -95,7 +95,8 @@ if [ "$os" == "macos" ] && [ $dev == "false" ]; then
 	fi
 	popd
 else
-	scons $target $mono_module compiledb=yes custom_modules="../godoterrorhandler" opengl3=yes --jobs=$cpus
+	#scons $target $mono_module compiledb=yes custom_modules="../godoterrorhandler" opengl3=yes --jobs=$cpus
+ 	scons $target $mono_module debug_symbols=yes compiledb=yes custom_modules="../godoterrorhandler" opengl3=yes --jobs=$cpus 
 	if [ $mono == "true" ]; then
 		echo "Building C# glue and assemblies."
 		"./bin/$godot_exe_host" --headless --generate-mono-glue modules/mono/glue
